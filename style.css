@@ -1,0 +1,79 @@
+#all{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left:-464px;
+  margin-top: -322.44px;
+}
+#login_title h1{
+  font-family: 돋움;
+  text-align: center;
+}
+#login_title h1 span{
+  font-size:48px;
+}
+#login_box{
+  position: relative;
+  box-sizing: border-box;
+  width: 928px;
+  height: 326px;
+  padding: 60px 60px 0 60px;
+  background: #094a9a;
+}
+#login_box>h1{
+  margin-top: 0;
+  font-family: 굴림;
+  font-size:48px;
+  color: white;
+}
+#login_box label{
+  display: inline-block;
+  width: 100px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+#login_box p{
+  color: white;
+  font-size: 12px;
+  height: 23px;
+  font-family: 돋움;
+}
+#login_box input[type=text], input[type=password]{
+  background-color: #E0E0E0;
+  width:184px;
+  height: 32px;
+  padding: 0 5px 0 5px;
+  border: none;
+}
+#login_box #begin-box input[type=button]{
+  width:86px;
+  height: 72px;
+  border: 1px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#login_box input[type=button]:hover{
+  color: #E0E0E0;
+}
+#login_box #begin-box{
+  display: inline-block;
+  border-right: 1px solid gray;
+  width: 426px;
+  height: 142px;
+}
+#button-box{
+  position: relative;
+}
+#end-box {
+  display: inline-block;
+  position: absolute;
+  margin-left: 38px;
+}
+#end-box input[type=button]{
+  width:175px;
+  height: 43px;
+  cursor: pointer;
+  font-family: 돋움;
+  font-weight: bold;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      div.item:nth-child(1) {background: blueviolet;}
+      div.item:nth-child(2) {background: pink;}
+      div.item:nth-child(3) {background-color: burlywood;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript">
+      $(function() {
+          var width = $('[data-role="slider"]').attr('data-width');
+          var height = $('[data-role="slider"]').attr('data-height');
+          var count = $('[data-role="slider"] div.item').length;
+          $('[data-role="slider"]').css({
+            position: 'relative',
+            overflow: 'hidden',
+            width: width,
+            height: height
+          }).find('.container').css({
+            position: 'absolute',
+            width: count*width,
+            overflow: 'hidden'
+          }).find('.item').css({
+            width: width,
+            height: height,
+            float: 'left'
+          });
+
+          var currentPage = 0;
+          var changePage = function(){
+            $('[data-role="slider"] > .container').animate({
+              left: -currentPage * width
+            }, 500);
+          };
+
+          $('#left-button').click(function(){
+            if(currentPage > 0){
+              currentPage = currentPage - 1;
+              changePage();
+            }
+          });
+
+          $('#right-button').click(function(){
+            if(currentPage < count - 1){
+              currentPage = currentPage + 1;
+              changePage();
+            }
+          });
+      });
+
+    </script>
+  </head>
+  <body>
+    <div data-role="slider" data-width="500" data-height="300">
+      <div class="container">
+        <div class="item">
+          <h1>Lorem ipsum dolor sit amet</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor eu mauris eu hendrerit. Ut mattis faucibus libero, pulvinar finibus libero consequat id. Nunc ut nisl sed nisi malesuada elementum nec sit amet ante. Quisque convallis lacus turpis, eu placerat odio blandit at. Sed orci nunc, aliquam ut lobortis id, fermentum in neque. Aliquam pulvinar ante id nibh sollicitudin molestie ut at nunc. Fusce nec egestas ipsum, non blandit quam. Donec nulla quam, tempor malesuada hendrerit vitae, euismod vel velit. Donec eget eleifend metus, vitae vulputate felis. Suspendisse sagittis est aliquet dui molestie pretium. Phasellus quis quam mi. Fusce euismod tincidunt consequat. Nullam faucibus at augue sed vestibulum. Proin id ligula malesuada, sollicitudin felis vel, ultrices odio.</p>
+        </div>
+        <div class="item">
+          <h1>Proin in urna turpis.</h1>
+          <p>Proin a facilisis tellus. Curabitur at enim ornare, convallis quam eu, efficitur est. Donec vitae odio a ipsum gravida maximus. Donec nec tincidunt purus. Vivamus vehicula ex eu nisl malesuada, sit amet ultricies tellus laoreet. Suspendisse efficitur rutrum ligula quis auctor. Phasellus consequat placerat erat id feugiat. Curabitur lacinia viverra risus, congue pretium purus molestie at. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse ultricies elit quis tortor pulvinar, a sodales mauris vestibulum. Aliquam erat volutpat. Fusce sit amet odio consectetur, dapibus eros nec, mollis mi. Fusce nec dui quis odio feugiat volutpat eu elementum ex. Nam semper imperdiet pulvinar. Duis aliquam nisi ut ex pulvinar ultrices. Morbi faucibus et mauris sit amet sagittis.</p>
+        </div>
+        <div class="item">
+          <h1>Duis malesuada lorem neque.</h1>
+          <p>Pellentesque est odio, luctus sit amet ultrices eget, euismod ut erat. Praesent ut justo in felis efficitur iaculis facilisis eget mauris. Donec facilisis volutpat velit, in commodo nulla tempor nec. Sed consequat cursus vulputate. Donec sit amet magna ut sapien pharetra ullamcorper. Ut mauris eros, mollis ac quam at, fringilla tempor lectus. Maecenas id eleifend erat, sit amet viverra ex. Maecenas scelerisque ultrices sem at scelerisque. Phasellus porta aliquet aliquet. Vestibulum dignissim neque et erat auctor mollis. Vestibulum quis neque sit amet leo tincidunt pulvinar.</p>
+        </div>
+      </div>
+    </div>
+    <button id="left-button">←</button>
+    <button id="right-button">→</button>
+  </body>
+</html>

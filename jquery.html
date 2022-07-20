@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="jquery.lightbox.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
+    </script>
+    <script src="jquery.lightbox.min.js">
+    </script>
+    <script type="text/javascript">
+      let settings = {fixedNavigation:true};
+      $(function(){
+        $('a.light').lightBox();
+      });
+    </script>
+  </head>
+  <body>
+    <a class="light" href="image1.jpg">LightBox</a>
+    <a class="light" href="image2.jpg">LightBox</a>
+    <a class="light" href="image3.jpg">LightBox</a>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+li{
+  list-style-type: none;
+  padding: 16px 0 16px;
+  border-bottom: 1px solid #c7c7c7;
+}
+div.content{
+  padding: 16px;
+}
+@media screen and (orientation: portrait){
+  div.left{display: none;}
+}
+@media screen and (orientation: landscape){
+  div.left{
+    width: 30%;
+    float: left;
+  }
+  div.right{
+    width: 70%;
+    float: right;
+  }
+}
